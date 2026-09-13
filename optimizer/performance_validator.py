@@ -1,13 +1,15 @@
 import time
+from copy import deepcopy
 
 
 def measure_runtime(function, test_input, runs=3):
     times = []
 
     for _ in range(runs):
+        run_input = deepcopy(test_input)
         start = time.perf_counter()
 
-        function(test_input)
+        function(run_input)
 
         end = time.perf_counter()
 
@@ -34,7 +36,7 @@ def compare_performance(
         runs
     )
 
-    speedup = original_time / optimized_time
+    speedup = original_time / optimized_time if optimized_time else float("inf")
 
     return {
         "original_time": original_time,

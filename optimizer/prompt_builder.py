@@ -12,6 +12,7 @@ Call count: {function["calls"]}
 Source code:
 ```python
 {source}
+```
 
 Tasks:
 
@@ -20,6 +21,8 @@ Identify its algorithmic complexity.
 Suggest an optimized implementation.
 Explain why the proposed implementation should be faster.
 Preserve the existing function interface and behavior.
+Do not narrow the types of input accepted by the original implementation.
+In particular, do not assume values are hashable unless the original code does.
 
 IMPORTANT:
 At the end of your response, provide the complete replacement implementation
